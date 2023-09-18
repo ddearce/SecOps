@@ -63,6 +63,7 @@ Las contribuciones son bienvenidas. Si deseas mejorar esta herramienta, no dudes
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT.
+
 ---
 
 ¡Esperamos que SECOPS - Event Extractor te sea útil en tu trabajo de seguridad y análisis de eventos de Windows!
