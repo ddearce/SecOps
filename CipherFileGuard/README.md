@@ -1,7 +1,7 @@
 <h1 align="center">Cipher File Guard: Your Trusty and Easy Cipher</h1>
 
 <p align="center">
-  <img src="cipher.png" alt="FileSentry Logo" width="200">
+  <img src="cipher.png" alt="Cipher Guard Logo" width="200">
 </p>
 
 <p align="center">
