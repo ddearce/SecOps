@@ -1,4 +1,12 @@
-# SECOPS - Event Extractor by Damian de Arce
+<h1 align="center">Event Extractor</h1>
+
+<p align="center">
+  <img src="extractor.png" alt="Extractor Logo" width="200">
+</p>
+
+<p align="center">
+  <em>Keeping things organized and in order.</em>
+</p>
 
 ---
 
