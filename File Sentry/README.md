@@ -14,6 +14,8 @@ FileSentry is a Python tool that allows you to maintain constant vigilance over 
 
 **FileSentry es una herramienta de Python que te permite mantener un ojo vigilante sobre tus archivos críticos y te notifica por correo electrónico cuando se detectan cambios inesperados. Esta herramienta es esencial para profesionales de la ciberseguridad y administradores de sistemas que desean mantener un control constante sobre la integridad de sus archivos importantes.**
 
+---
+
 ## Features / Características
 
 - Real-time monitoring of critical files / Monitoreo en tiempo real de archivos críticos.
