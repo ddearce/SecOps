@@ -1,8 +1,20 @@
-# SecOps - Tools and Scrips / Herramientas y Scripts
+<h1 align="center">SecOps: Your Arsenal for Cybersecurity</h1>
+
+<p align="center">
+  <img src="secops.png" alt="SecOps Logo" width="200">
+</p>
+
+<p align="center">
+  <em>Empower your cybersecurity endeavors with our suite of Python security tools.</em>
+</p>
+
+---
 
 Welcome to the SecOps - Tools and Scripts repository, created by cybersecurity expert Damian de Arce.
 
 Bienvenido al repositorio SecOps - Herramientas y Scripts, creado por el experto en ciberseguridad Damian de Arce.
+
+---
 
 ## Acerca de este Repositorio / About this Repository
 
