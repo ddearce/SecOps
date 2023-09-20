@@ -41,15 +41,16 @@ FileSentry will start monitoring the specified directories and will notify you v
 
 FileSentry comenzará a monitorear los directorios especificados y te notificará por correo electrónico cuando detecte cambios inesperados en los archivos.
 
-Contributions / Contribuciones
+## Contributions / Contribuciones
 If you have ideas to enhance FileSentry or encounter issues, we invite you to contribute! Feel free to open issues or send pull requests to make this tool even better.
 
 Si tienes ideas para mejorar FileSentry o encuentras problemas, ¡te invitamos a contribuir! Siéntete libre de abrir problemas (issues) o enviar solicitudes de extracción (pull requests) para hacer que esta herramienta sea aún mejor.
 
-Notes / Notas
+## Notes / Notas
 Use this tool ethically and legally, and respect all applicable laws and regulations / Utiliza esta herramienta de manera ética y legal y respeta todas las leyes y regulaciones aplicables.
 Exercise caution when storing passwords in code. It is recommended to use secure methods for managing credentials in production environments / Ten precaución al almacenar contraseñas en el código. Se recomienda utilizar métodos seguros para gestionar las credenciales en entornos de producción.
-License / Licencia
+
+## License / Licencia
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
