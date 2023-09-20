@@ -66,9 +66,10 @@ SONIT (SecOps Network Inventory Tool) is a network inventory tool that allows yo
 
 ## Contribución / Contribution
 Si deseas contribuir a este proyecto, ¡estamos abiertos a tus sugerencias y mejoras! Siéntete libre de crear un problema o enviar una solicitud de extracción.
-(If you would like to contribute to this project, we are open to your suggestions and improvements! Feel free to create an issue or submit a pull request.)
+
+If you would like to contribute to this project, we are open to your suggestions and improvements! Feel free to create an issue or submit a pull request.)
 
 ## Licencia / License
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
 
-(This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
