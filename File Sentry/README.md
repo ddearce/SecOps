@@ -34,8 +34,9 @@ Before using FileSentry, make sure to configure your email credentials in the sc
 3. Add the paths of the directories you wish to monitor to the `directorios_a_monitorear` variable / Agrega las rutas de los directorios que deseas monitorear en la variable `directorios_a_monitorear`.
 4. Run the `filesentry.py` script using Python / Ejecuta el script `filesentry.py` utilizando Python.
 
-```bash
+\```
 python filesentry.py
+\```
 
 FileSentry will start monitoring the specified directories and will notify you via email when unexpected changes in the files are detected.
 
