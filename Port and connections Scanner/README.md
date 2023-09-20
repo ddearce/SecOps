@@ -1,4 +1,12 @@
-# Port Scanner by Damian de Arce
+<h1 align="center">Port Scanner</h1>
+
+<p align="center">
+  <img src="port.png" alt="Port Scanner Logo" width="200">
+</p>
+
+<p align="center">
+  <em>¡Sails Away!.</em>
+</p>
 
 ---
 
