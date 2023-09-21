@@ -1,0 +1,7 @@
+{
+    "smtp_username": "",
+    "smtp_password": "",
+    "sender_email": "",
+    "receiver_email": "",
+    "last_subnet": "192.168.1.1/24"
+}
