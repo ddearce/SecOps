@@ -9,11 +9,11 @@
 </p>
 
 <div align="center">
-  <a href="https://github.com/ddearce/SecOps/releases/tag/SONIT"><strong>Descargar Ejecutable</strong></a>
+  <a href="https://github.com/ddearce/SecOps/releases/tag/NightWatch"><strong>Descargar Ejecutable</strong></a>
 </div>
 
 <div align="center">
-  <a href="https://github.com/ddearce/SecOps/releases/tag/SONIT"><strong>Download Executable</strong></a>
+  <a href="https://github.com/ddearce/SecOps/releases/tag/NightWatch"><strong>Download Executable</strong></a>
 </div>
 
 ---
