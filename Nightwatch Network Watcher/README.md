@@ -8,6 +8,14 @@
   <em>Night gathers, and now my watch begins.</em>
 </p>
 
+<div align="center">
+  <a href="https://github.com/ddearce/SecOps/releases/tag/SONIT"><strong>Descargar Ejecutable</strong></a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/ddearce/SecOps/releases/tag/SONIT"><strong>Download Executable</strong></a>
+</div>
+
 ---
 
 NightWatch Network Watcher is a powerful network monitoring tool designed to help you keep an eye on your network's security. It utilizes ARP scanning to identify devices on your network and provides real-time alerts if any unauthorized devices are detected.
