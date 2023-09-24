@@ -59,7 +59,7 @@ Para usar Easy Account Manager, sigue estos pasos de instalación / To use Easy 
 
 ## Capturas de Pantalla / Screenshots
 
-![Easy Account Manager Screenshot](screenshot.PNG)
+![Easy Account Manager Screenshot](screenshot.png)
 
 ## Uso / Usage
 
