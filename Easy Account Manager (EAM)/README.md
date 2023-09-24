@@ -26,9 +26,9 @@ Easy Account Manager (EAM) is a Python application designed to assist you in man
 
 ## Features / Características
 
-- **Gestión de Cuentas de Usuario**: Agrega y almacena fácilmente información de cuentas de usuario, incluyendo nombre completo, nombre de usuario, departamento, sistema, fecha de inicio y fecha de finalización.
+- **Gestión de Cuentas de Usuario**: Agrega y almacena fácilmente información de cuentas de usuario, incluyendo nombre completo, nombre de usuario, departamento, sistema, fecha de inicio y fecha de finalización. Ahora es posible seleccionar si la cuenta es una cuenta con privilegios o una cuenta de servicio, y queda registrado en el archivo Excel "inventario_cuentas.xlsx", cumpliendo aún más con los requerimientos de ISO 27001 y CIS.
   
-  **User Account Management**: Easily add and store user account information, including full name, username, department, system, start date, and end date.
+  **User Account Management**: Easily add and store user account information, including full name, username, department, system, start date, and end date. You can now select whether the account is a privileged account or a service account, and it will be recorded in the "inventario_cuentas.xlsx" Excel file, further complying with ISO 27001 and CIS requirements.
 
 - **Búsqueda de Usuario**: Encuentra rápidamente cuentas de usuario buscando por nombre de usuario.
   
@@ -65,9 +65,9 @@ Para usar Easy Account Manager, sigue estos pasos de instalación / To use Easy 
 
 **Agregar una Cuenta de Usuario / Add a User Account**
 
-1. Ingresa el nombre completo del usuario, el nombre de usuario, selecciona un departamento, elige un sistema y especifica la fecha de inicio y fecha de finalización (o marca "Trabajando Actualmente").
+1. Ingresa el nombre completo del usuario, el nombre de usuario, selecciona un departamento, elige un sistema, especifica si es una cuenta con privilegios o de servicio y especifica la fecha de inicio y fecha de finalización (o marca "Trabajando Actualmente").
 
-   Enter the user's full name, username, select a department, choose a system, and specify the start and end dates (or mark "Currently Working").
+   Enter the user's full name, username, select a department, choose a system, specify whether it's a privileged or service account, and specify the start and end dates (or mark "Currently Working").
 
 3. Haz clic en el botón "Agregar Usuario al Inventario"
 
@@ -172,6 +172,7 @@ Easy Account Manager (EAM) is an essential and foundational tool for the impleme
 **ISO 27001**: EAM helps you manage and track user accounts, which is critical for compliance with various security controls in ISO 27001, such as control A.9.2.3 (User Access Management) and control A.12.6.1 (Information Security Change Management).
 
 **Controles CIS (Center for Internet Security)**: EAM facilita el cumplimiento de los controles de seguridad de CIS, como el Control 5.1 (Establecer y Mantener un Inventario de Cuentas), al permitirte mantener un registro organizado de las cuentas de usuario en tu entorno.
+
 **CIS Controls (Center for Internet Security)**: EAM simplifies compliance with CIS security controls, such as Control 5.1 (Establish and Maintain an Inventory of Accounts), by allowing you to maintain an organized record of user accounts in your environment.
 
 Utilizando Easy Account Manager, puedes demostrar un enfoque sólido hacia la gestión de cuentas de usuario, lo que contribuye a la seguridad de la información en tu organización y al cumplimiento de las normativas y estándares de seguridad aplicables.
