@@ -76,10 +76,12 @@ def crear_registro_cuenta():
     sistema = combo_sistema_var.get()  # Nuevo campo para el sistema
     fecha_inicio = entry_fecha_inicio.get()
     fecha_fin = entry_fecha_fin.get()
+    privilegio = checkbox_privilegio_var.get()
+    servicio = checkbox_servicio_var.get()
 
     if not os.path.exists(ARCHIVO_INVENTARIO):
         # Si el archivo no existe, se crea y se añade la cabecera
-        df = pd.DataFrame(columns=['Nombre', 'Usuario', 'Departamento', 'Sistema', 'Fecha Inicio', 'Fecha Fin'])
+        df = pd.DataFrame(columns=['Nombre', 'Usuario', 'Departamento', 'Sistema', 'Fecha Inicio', 'Fecha Fin', 'Privilegio', 'Servicio'])
     else:
         # Si el archivo existe, cargar los datos actuales
         df = pd.read_excel(ARCHIVO_INVENTARIO)
@@ -89,7 +91,7 @@ def crear_registro_cuenta():
         fecha_fin = "Actualmente Trabajando"
 
     # Agregar el nuevo registro al DataFrame
-    nuevo_registro = {'Nombre': nombre, 'Usuario': usuario, 'Departamento': departamento, 'Sistema': sistema, 'Fecha Inicio': fecha_inicio, 'Fecha Fin': fecha_fin}
+    nuevo_registro = {'Nombre': nombre, 'Usuario': usuario, 'Departamento': departamento, 'Sistema': sistema, 'Fecha Inicio': fecha_inicio, 'Fecha Fin': fecha_fin, 'Privilegio': privilegio, 'Servicio': servicio}
     df = pd.concat([df, pd.DataFrame([nuevo_registro])], ignore_index=True)
 
     # Guardar el DataFrame en el archivo Excel
@@ -102,7 +104,9 @@ def crear_registro_cuenta():
     combo_sistema_var.set('')
     entry_fecha_inicio.delete(0, tk.END)
     entry_fecha_fin.delete(0, tk.END)
-    checkbox_actualmente_trabajando.set(0)  # Desmarcar el checkbox
+    checkbox_actualmente_trabajando.set(0)
+    checkbox_privilegio_var.set(0)  # Desmarcar el checkbox de privilegio
+    checkbox_servicio_var.set(0)   # Desmarcar el checkbox de servicio
     # Obtener el nombre de usuario actual de Windows
     usuario_actual = getpass.getuser()
     # Registrar la acción en el log, incluyendo el usuario creado
@@ -130,7 +134,7 @@ def buscar_cuenta_inventario():
 def modificar_usuario_window(usuario_data):
     modificar_usuario_window = tk.Toplevel(root)
     modificar_usuario_window.title("Modificar Usuario")
-    modificar_usuario_window.geometry("550x250")
+    modificar_usuario_window.geometry("550x270")
 
     label_nombre_mod = tk.Label(modificar_usuario_window, text="Nombre Completo:")
     entry_nombre_mod = tk.Entry(modificar_usuario_window)
@@ -163,6 +167,14 @@ def modificar_usuario_window(usuario_data):
     checkbox_actualmente_trabajando_mod = tk.Checkbutton(modificar_usuario_window, text="Actualmente Trabajando", variable=checkbox_actualmente_trabajando_mod_var)
     if usuario_data[5] == "Actualmente Trabajando":
         checkbox_actualmente_trabajando_mod.select()
+    checkbox_privilegio_mod_var = tk.IntVar()
+    checkbox_privilegio_mod = tk.Checkbutton(modificar_usuario_window, text="Cuenta de Privilegio", variable=checkbox_privilegio_mod_var)
+    if usuario_data[6]:
+        checkbox_privilegio_mod.select()
+    checkbox_servicio_mod_var = tk.IntVar()
+    checkbox_servicio_mod = tk.Checkbutton(modificar_usuario_window, text="Cuenta de Servicio", variable=checkbox_servicio_mod_var)
+    if usuario_data[7]:
+        checkbox_servicio_mod.select()
 
     btn_guardar_modificacion = tk.Button(modificar_usuario_window, text="Guardar Cambios",
                                          command=lambda: guardar_modificacion_usuario(entry_nombre_mod.get(),
@@ -172,6 +184,8 @@ def modificar_usuario_window(usuario_data):
                                                                                        entry_fecha_inicio_mod.get(),
                                                                                        entry_fecha_fin_mod.get(),
                                                                                        checkbox_actualmente_trabajando_mod_var.get(),
+                                                                                       checkbox_privilegio_mod_var.get(),
+                                                                                       checkbox_servicio_mod_var.get(),
                                                                                        modificar_usuario_window))
 
     label_nombre_mod.grid(row=0, column=0, sticky="w")
@@ -187,10 +201,12 @@ def modificar_usuario_window(usuario_data):
     label_fecha_fin_mod.grid(row=5, column=0, sticky="w")
     entry_fecha_fin_mod.grid(row=5, column=1)
     checkbox_actualmente_trabajando_mod.grid(row=6, columnspan=2)
-    btn_guardar_modificacion.grid(row=7, columnspan=2)
+    checkbox_privilegio_mod.grid(row=7, columnspan=2)
+    checkbox_servicio_mod.grid(row=8, columnspan=2)
+    btn_guardar_modificacion.grid(row=9, columnspan=2)
 
 # Función para guardar la modificación de un usuario
-def guardar_modificacion_usuario(nombre_mod, usuario_mod, departamento_mod, sistema_mod, fecha_inicio_mod, fecha_fin_mod, actualmente_trabajando_mod, ventana_modificacion):
+def guardar_modificacion_usuario(nombre_mod, usuario_mod, departamento_mod, sistema_mod, fecha_inicio_mod, fecha_fin_mod, actualmente_trabajando_mod, privilegio_mod, servicio_mod, ventana_modificacion):
     if os.path.exists(ARCHIVO_INVENTARIO):
         wb = openpyxl.load_workbook(ARCHIVO_INVENTARIO)
         sheet = wb.active
@@ -205,6 +221,8 @@ def guardar_modificacion_usuario(nombre_mod, usuario_mod, departamento_mod, sist
                 sistema_original = row[3]
                 fecha_inicio_original = row[4]
                 fecha_fin_original = row[5]
+                privilegio_original = row[6]
+                servicio_original = row[7]
                 # Verificar qué campos se modificaron
                 cambios = []
                 if nombre_original != nombre_mod:
@@ -219,6 +237,10 @@ def guardar_modificacion_usuario(nombre_mod, usuario_mod, departamento_mod, sist
                     cambios.append(f"Fecha de Inicio: {fecha_inicio_original} -> {fecha_inicio_mod}")
                 if fecha_fin_original != fecha_fin_mod:
                     cambios.append(f"Fecha de Fin: {fecha_fin_original} -> {fecha_fin_mod}")
+                if privilegio_original != privilegio_mod:
+                    cambios.append(f"Privilegio: {privilegio_original} -> {privilegio_mod}")
+                if servicio_original != servicio_mod:
+                    cambios.append(f"Servicio: {servicio_original} -> {servicio_mod}")
                 
                 # Verificar el cambio en el estado
                 if fecha_fin_original != fecha_fin_mod:
@@ -236,6 +258,8 @@ def guardar_modificacion_usuario(nombre_mod, usuario_mod, departamento_mod, sist
                 sheet.cell(row=row_index, column=5, value=fecha_inicio_mod)
                 if actualmente_trabajando_mod:
                     sheet.cell(row=row_index, column=6, value="Actualmente Trabajando")
+                    sheet.cell(row=row_index, column=7, value=privilegio_mod)
+                    sheet.cell(row=row_index, column=8, value=servicio_mod)
                 else:
                     sheet.cell(row=row_index, column=6, value=fecha_fin_mod)
                 
@@ -352,7 +376,7 @@ def abrir_ventana_ajustes_sistemas():
 # Crear la ventana principal de la aplicación
 root = tk.Tk()
 root.title("Easy Account Manager - by Damian de Arce")
-root.geometry("600x720")
+root.geometry("600x810")
 
 # Estilo de ttkthemes
 style = ThemedStyle(root)
@@ -394,6 +418,10 @@ entry_fecha_fin = ttk.Entry(frame_ingreso_cuenta)
 checkbox_actualmente_trabajando = tk.IntVar()
 checkbox_actualmente_trabajando.set(0)
 checkbox_actualmente_trabajando_checkbutton = Checkbutton(frame_ingreso_cuenta, text="Actualmente Trabajando", variable=checkbox_actualmente_trabajando)
+checkbox_privilegio_var = tk.IntVar()
+checkbox_privilegio = tk.Checkbutton(frame_ingreso_cuenta, text="Cuenta de Privilegio", variable=checkbox_privilegio_var)
+checkbox_servicio_var = tk.IntVar()
+checkbox_servicio = tk.Checkbutton(frame_ingreso_cuenta, text="Cuenta de Servicio", variable=checkbox_servicio_var)
 btn_agregar = ttk.Button(frame_ingreso_cuenta, text="Agregar Usuario al Inventario", command=crear_registro_cuenta, image=add_icon, compound="left")
 
 # Posicionamiento de widgets en la caja "Ingreso de cuenta"
@@ -410,7 +438,9 @@ entry_fecha_inicio.grid(row=4, column=1)
 label_fecha_fin.grid(row=5, column=0, sticky="w")
 entry_fecha_fin.grid(row=5, column=1)
 checkbox_actualmente_trabajando_checkbutton.grid(row=6, columnspan=2)
-btn_agregar.grid(row=7, columnspan=2)
+checkbox_privilegio.grid(row=7, columnspan=2)
+checkbox_servicio.grid(row=8, columnspan=2)
+btn_agregar.grid(row=9, columnspan=2)
 
 # Caja "Modificar cuenta"
 frame_modificar_cuenta = ttk.LabelFrame(root, text="Modificar cuenta", padding=(10, 10))
@@ -442,8 +472,10 @@ btn_ajustes_departamentos = ttk.Button(frame_ajustes, text="Ajustes de Departame
 btn_ajustes_sistemas = ttk.Button(frame_ajustes, text="Ajustes de Sistemas", command=abrir_ventana_ajustes_sistemas, image=setting_icon, compound="left")
 
 # Posicionamiento de widgets en la caja "Ajustes"
-btn_ajustes_departamentos.grid(row=0, column=0, padx=10)
-btn_ajustes_sistemas.grid(row=0, column=1, padx=10)
-
+btn_ajustes_departamentos.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+btn_ajustes_sistemas.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+frame_ajustes.columnconfigure(0, weight=1)
+frame_ajustes.columnconfigure(1, weight=1)
+frame_ajustes.rowconfigure(0, weight=1)
 
 root.mainloop()
