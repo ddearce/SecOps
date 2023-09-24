@@ -1,1 +1,8 @@
 
+2023-09-23 22:51:35 - Usuario: etern - Acción: Creó un usuario (adoe)
+2023-09-23 22:52:39 - Usuario: etern - Acción: Modificó un usuario (adoe) - Cambios: Privilegio: 1 -> 0
+2023-09-23 23:01:06 - Usuario: etern - Acción: Modificó un usuario (adoe) - Cambios: Fecha de Fin: Actualmente Trabajando -> 23/09/2023, Privilegio: 0 -> 1, Fecha de Fin: Actualmente Trabajando -> 23/09/2023, Estado: Actualmente Trabajando -> No Activo
+2023-09-23 23:01:49 - Usuario: etern - Acción: Modificó un usuario (adoe) - Cambios: Privilegio: 0 -> 1, Estado: No Activo -> Actualmente Trabajando
+2023-09-23 23:26:34 - Usuario: etern - Acción: Modificó un usuario (jdoe) - Cambios: Privilegio: None -> 0, Servicio: None -> 0
+2023-09-24 00:10:53 - Usuario: etern - Acción: Eliminó un usuario (adoe)
+2023-09-24 00:11:46 - Usuario: etern - Acción: Creó un usuario (adoe)

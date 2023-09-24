@@ -135,6 +135,8 @@ def modificar_usuario_window(usuario_data):
     modificar_usuario_window = tk.Toplevel(root)
     modificar_usuario_window.title("Modificar Usuario")
     modificar_usuario_window.geometry("550x270")
+    # Configurar el ícono para la subventana de modificación de usuario
+    modificar_usuario_window.iconbitmap("eam.ico") 
 
     label_nombre_mod = tk.Label(modificar_usuario_window, text="Nombre Completo:")
     entry_nombre_mod = tk.Entry(modificar_usuario_window)
@@ -308,6 +310,8 @@ def abrir_ventana_ajustes():
     ajustes_window = tk.Toplevel(root)
     ajustes_window.title("Ajustes de Departamentos")
     ajustes_window.geometry("400x100")
+    # Configurar el ícono para la ventana de ajustes de departamentos
+    ajustes_window.iconbitmap("eam.ico") 
     
     # Crear y cargar la lista de departamentos desde el archivo JSON
     departamentos = cargar_departamentos()
@@ -343,6 +347,8 @@ def abrir_ventana_ajustes_sistemas():
     ajustes_sistemas_window = tk.Toplevel(root)
     ajustes_sistemas_window.title("Ajustes de Sistemas")
     ajustes_sistemas_window.geometry("400x100")
+    # Configurar el ícono para la ventana de ajustes de sistemas
+    ajustes_sistemas_window.iconbitmap("eam.ico")
     
     # Crear y cargar la lista de sistemas desde el archivo JSON
     sistemas = cargar_sistemas()
@@ -376,11 +382,14 @@ def abrir_ventana_ajustes_sistemas():
 # Crear la ventana principal de la aplicación
 root = tk.Tk()
 root.title("Easy Account Manager - by Damian de Arce")
-root.geometry("600x810")
+root.geometry("560x810")
+
+# Configurar el ícono de la ventana
+root.iconbitmap("eam.ico") 
 
 # Estilo de ttkthemes
 style = ThemedStyle(root)
-style.set_theme("breeze")  # Cambia el tema a uno más moderno (puedes elegir otro si prefieres)
+style.set_theme("plastik")  # Cambia el tema a uno más moderno (puedes elegir otro si prefieres)
 
 # Agregar íconos a los botones
 add_icon = PhotoImage(file='add.png')
@@ -425,22 +434,22 @@ checkbox_servicio = tk.Checkbutton(frame_ingreso_cuenta, text="Cuenta de Servici
 btn_agregar = ttk.Button(frame_ingreso_cuenta, text="Agregar Usuario al Inventario", command=crear_registro_cuenta, image=add_icon, compound="left")
 
 # Posicionamiento de widgets en la caja "Ingreso de cuenta"
-label_nombre.grid(row=0, column=0, sticky="w")
-entry_nombre.grid(row=0, column=1)
-label_usuario.grid(row=1, column=0, sticky="w")
-entry_usuario.grid(row=1, column=1)
-label_departamento.grid(row=2, column=0, sticky="w")
-combo_departamento_menu.grid(row=2, column=1, sticky="w")
-label_sistema.grid(row=3, column=0, sticky="w")
-combo_sistema_menu.grid(row=3, column=1, sticky="w")
-label_fecha_inicio.grid(row=4, column=0, sticky="w")
-entry_fecha_inicio.grid(row=4, column=1)
-label_fecha_fin.grid(row=5, column=0, sticky="w")
-entry_fecha_fin.grid(row=5, column=1)
-checkbox_actualmente_trabajando_checkbutton.grid(row=6, columnspan=2)
-checkbox_privilegio.grid(row=7, columnspan=2)
-checkbox_servicio.grid(row=8, columnspan=2)
-btn_agregar.grid(row=9, columnspan=2)
+label_nombre.grid(row=0, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+entry_nombre.grid(row=0, column=1, padx=10, pady=5)  # Agrega espacio aquí
+label_usuario.grid(row=1, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+entry_usuario.grid(row=1, column=1, padx=10, pady=5)  # Agrega espacio aquí
+label_departamento.grid(row=2, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+combo_departamento_menu.grid(row=2, column=1, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+label_sistema.grid(row=3, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+combo_sistema_menu.grid(row=3, column=1, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+label_fecha_inicio.grid(row=4, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+entry_fecha_inicio.grid(row=4, column=1, padx=10, pady=5)  # Agrega espacio aquí
+label_fecha_fin.grid(row=5, column=0, sticky="w", padx=10, pady=5)  # Agrega espacio aquí
+entry_fecha_fin.grid(row=5, column=1, padx=10, pady=5)  # Agrega espacio aquí
+checkbox_actualmente_trabajando_checkbutton.grid(row=6, columnspan=2, padx=10, pady=5)  # Agrega espacio aquí
+checkbox_privilegio.grid(row=7, columnspan=2, padx=10, pady=5)  # Agrega espacio aquí
+checkbox_servicio.grid(row=8, columnspan=2, padx=10, pady=5)  # Agrega espacio aquí
+btn_agregar.grid(row=9, columnspan=2, padx=10, pady=5)  # Agrega espacio aquí
 
 # Caja "Modificar cuenta"
 frame_modificar_cuenta = ttk.LabelFrame(root, text="Modificar cuenta", padding=(10, 10))
